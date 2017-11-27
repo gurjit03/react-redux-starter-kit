@@ -1,7 +1,8 @@
 {
   "scripts": {
     "api": "node ratingsAPI.js",
-    "build": "webpack"
+    "build": "webpack",
+    "watch" : "webpack --watch"
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -60,7 +61,7 @@
     "react-test-renderer": "15.5.4",
     "webpack-dev-server": "2.4.5"
   },
-  "name": "Basic React Kit",
+  "name": "basic-react-kit",
   "version": "1.0.0",
   "description": "A basic starter kit for react",
   "main": "server.js",
