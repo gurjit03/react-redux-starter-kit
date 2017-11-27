@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "api": "node ratingsAPI.js"
+    "api": "node ratingsAPI.js",
+    "build": "webpack"
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -59,11 +60,10 @@
     "react-test-renderer": "15.5.4",
     "webpack-dev-server": "2.4.5"
   },
-  "name": "complete-intro-to-react",
-  "version": "3.0.0",
-  "description": "A Complete Intro to React workshop",
+  "name": "Basic React Kit",
+  "version": "1.0.0",
+  "description": "A basic starter kit for react",
   "main": "server.js",
-  "repository": "git@github.com:btholt/complete-intro-to-react.git",
-  "author": "Brian Holt <btholt@gmail.com>",
+  "author": "Gurjit Singh <gurjitmehta@gmail.com>",
   "license": "MIT"
 }
