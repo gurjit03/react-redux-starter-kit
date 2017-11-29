@@ -1,21 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import MyTitle from './MyTitle';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-const MyTitleFactory = React.createFactory(MyTitle);
+import '../public/style.css'
 
-const firstReactComponent = class firstReactComponent extends React.Component {
-  render() {
-    const wrapperClass = 'title';
-    const titleClass = 'title__text';
+class App extends React.Component {
+  render () {
     return (
-      <div className='my-first-component'>
-        <MyTitle title = 'hell yeah' wrapperClass = {wrapperClass} titleClass = {titleClass} />
-        <MyTitle title = 'react is feeling nice to me' wrapperClass = {wrapperClass} titleClass = {titleClass} />
-        <MyTitle title =  'alrighty bitey' wrapperClass = {wrapperClass} titleClass = {titleClass} />
+      <div className='app'>
+        <div className='landing'>
+          <h1>svideo</h1>
+          <input type='text' placeholder='search' />
+          <button className='browse-all'>or Browse All</button>
+        </div>
       </div>
     )
   }
 };
 
-ReactDOM.render(React.createElement(firstReactComponent),document.querySelector('#app'));
+ReactDOM.render(<App />, document.querySelector('#app'))
