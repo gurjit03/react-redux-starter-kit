@@ -1,20 +1,20 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
-  context : __dirname,
-  entry: './js/App.js',
+  context: __dirname,
+  entry: './js/App.jsx',
   devtool: 'source-map',
   output: {
-    path: path.join(__dirname,'/public'),
+    path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js','.json']
+    extensions: ['.js', '.jsx', '.json']
   },
   stats: {
     colors: true,
     reasons: true,
-    chunks: true,
+    chunks: true
   },
   devServer: {
     publicPath: '/public/'
@@ -23,13 +23,13 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.js(x)$/,
         loader: 'eslint-loader',
         exclude: /node_modules/
       },
       {
-        include : path.resolve(__dirname,'js'),
-        test: /\.js$/,
+        include: path.resolve(__dirname, 'js'),
+        test: /\.js(x)$/,
         loader: 'babel-loader'
       },
       {
@@ -46,4 +46,4 @@ module.exports = {
       }
     ]
   }
-};
+}
