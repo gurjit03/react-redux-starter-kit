@@ -1,23 +1,24 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   context: __dirname,
   entry: './js/App.jsx',
-  devtool: 'source-map',
+  devtool: 'cheap-eval-source-map',
   output: {
     path: path.join(__dirname, '/public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
   },
   stats: {
     colors: true,
     reasons: true,
-    chunks: true
+    chunks: true,
   },
   devServer: {
-    publicPath: '/public/'
+    publicPath: '/public/',
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -25,12 +26,12 @@ module.exports = {
         enforce: 'pre',
         test: /\.js(x)$/,
         loader: 'eslint-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         include: path.resolve(__dirname, 'js'),
         test: /\.js(x)$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
@@ -39,11 +40,11 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: false
-            }
-          }
-        ]
-      }
-    ]
-  }
-}
+              url: false,
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
