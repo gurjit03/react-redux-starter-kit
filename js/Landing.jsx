@@ -1,10 +1,10 @@
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const Landing = () => (
   <div className="landing">
-    <h1>ovideo</h1>
     <input type="text" placeholder="search" />
-    <button className="browse-all">or Browse All</button>
+    <RaisedButton label="Browse All" className="browse-all" />
   </div>
 );
 
