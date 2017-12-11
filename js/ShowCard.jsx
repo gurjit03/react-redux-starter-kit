@@ -10,13 +10,14 @@ const Wrapper = styled.div`
   margin-bottom: 25px;
 `;
 
-const ShowCard = (props) => (
+const ShowCard = props => (
   <Wrapper className="show-card">
     <img alt={`${props.title} Show Img`} src={`/public/img/posters/${props.poster}`} />
     <div>
       <h3>{props.title}</h3>
       <h3>({props.year})</h3>
       <p>{props.description}</p>
+      <p>Hello 23</p>
     </div>
   </Wrapper>
 );
@@ -26,6 +27,6 @@ ShowCard.propTypes = {
   title: string.isRequired,
   year: string.isRequired,
   description: string.isRequired
-}
+};
 
 export default ShowCard;

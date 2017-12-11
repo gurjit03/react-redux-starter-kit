@@ -8,12 +8,12 @@ class Search extends Component {
     super(props);
 
     this.state = {
-      searchValue: 'game',
+      searchValue: '',
     };
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
   handleSearchChange(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({
       searchValue: e.target.value,
     });
@@ -23,7 +23,13 @@ class Search extends Component {
       <div className="search">
         <header>
           <h1>Svideo</h1>
-          <input type="text" placeholder="Search" onChange={this.handleSearchChange} value={this.state.searchValue} />
+          <input
+            type="text"
+            className="filter-movies"
+            placeholder="Search"
+            onChange={this.handleSearchChange}
+            value={this.state.searchValue}
+          />
         </header>
         <div>
           {PreloadedData.shows
