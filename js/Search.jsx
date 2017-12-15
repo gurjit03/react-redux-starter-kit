@@ -1,23 +1,32 @@
+// @flow
+
 import React, { Component } from 'react';
 
-import PreloadedData from '../data.json';
 import ShowCard from './ShowCard';
+//
+// type Props = {
+//   history: RouterHistory,
+//   location: Location,
+//   match: Match,
+// };
+//
+// type State = {
+//   searchValue: string,
+// };
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      searchValue: '',
-    };
-    this.handleSearchChange = this.handleSearchChange.bind(this);
-  }
-  handleSearchChange(e) {
+  state = {
+    searchValue: '',
+  };
+  props: {
+    shows: Array<Show>,
+  };
+  handleSearchChange = (e: SyntheticKeyboardEvent & { target: HTMLInputElement }) => {
     // e.preventDefault();
     this.setState({
       searchValue: e.target.value,
     });
-  }
+  };
   render() {
     return (
       <div className="search">
@@ -32,7 +41,7 @@ class Search extends Component {
           />
         </header>
         <div>
-          {PreloadedData.shows
+          {this.props.shows
             .filter(
               show =>
                 `${show.description} ${show.title}`.toUpperCase().indexOf(this.state.searchValue.toUpperCase()) >= 0,
